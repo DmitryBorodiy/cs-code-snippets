@@ -1,12 +1,8 @@
 ﻿using MvvmSample.WPF.Data;
 using MvvmSample.WPF.Model;
 using MvvmSample.WPF.ViewModel;
-using System;
 using System.Diagnostics;
 using System.Windows;
-using System.Windows.Controls;
-using Wpf.Ui;
-using Wpf.Ui.Appearance;
 using Wpf.Ui.Controls;
 
 namespace MvvmSample.WPF.Views;

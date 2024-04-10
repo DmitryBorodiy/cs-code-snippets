@@ -8,6 +8,7 @@ using MvvmSample.WPF.Model;
 using System.Windows.Controls;
 using System.Reflection.Emit;
 using System.Windows.Input;
+using Wpf.Ui.Input;
 
 namespace MvvmSample.WPF.ViewModel
 {
@@ -23,6 +24,8 @@ namespace MvvmSample.WPF.ViewModel
             (
                 DBContext.GetPersons()
             );
+
+            MyCommand = new RelayCommand();
         }
 
         private DB DBContext { get; set; }
