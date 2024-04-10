@@ -1,0 +1,18 @@
+{
+  "version": 2,
+  "dgSpecHash": "l9CN2iKnCtncVzIAvqt6hTI0qyUtrBwO6Xgx00+EXPD33Ftuct16b2hyv28NMBX1jjtZHwhumXO8vz7bZjbt1w==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\dimab\\OneDrive\\Documents\\GitHub\\cs-code-snippets\\MvvmSample.WPF\\MvvmSample.WPF.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\dimab\\.nuget\\packages\\dynamitey\\3.0.3\\dynamitey.3.0.3.nupkg.sha512",
+    "C:\\Users\\dimab\\.nuget\\packages\\impromptuinterface\\8.0.4\\impromptuinterface.8.0.4.nupkg.sha512",
+    "C:\\Users\\dimab\\.nuget\\packages\\microsoft.csharp\\4.7.0\\microsoft.csharp.4.7.0.nupkg.sha512",
+    "C:\\Users\\dimab\\.nuget\\packages\\microsoft.netcore.platforms\\1.1.0\\microsoft.netcore.platforms.1.1.0.nupkg.sha512",
+    "C:\\Users\\dimab\\.nuget\\packages\\microsoft.netcore.targets\\1.1.0\\microsoft.netcore.targets.1.1.0.nupkg.sha512",
+    "C:\\Users\\dimab\\.nuget\\packages\\system.componentmodel\\4.3.0\\system.componentmodel.4.3.0.nupkg.sha512",
+    "C:\\Users\\dimab\\.nuget\\packages\\system.reflection.emit\\4.7.0\\system.reflection.emit.4.7.0.nupkg.sha512",
+    "C:\\Users\\dimab\\.nuget\\packages\\system.runtime\\4.3.0\\system.runtime.4.3.0.nupkg.sha512",
+    "C:\\Users\\dimab\\.nuget\\packages\\wpf-ui\\3.0.3\\wpf-ui.3.0.3.nupkg.sha512"
+  ],
+  "logs": []
+}

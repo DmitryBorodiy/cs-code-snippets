@@ -1,0 +1,50 @@
+﻿<Window
+    x:Class="MvvmSample.WPF.Views.MainWindow"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:mvvm="clr-namespace:ImpromptuInterface;assembly=ImpromptuInterface"
+    xmlns:ui="http://schemas.lepo.co/wpfui/2022/xaml"
+    Title="MVVM Sample"
+    Width="900"
+    Height="500"
+    MinWidth="400"
+    MinHeight="60"
+    ui:Design.Background="{DynamicResource ApplicationBackgroundBrush}"
+    Background="{DynamicResource ApplicationBackgroundBrush}"
+    mc:Ignorable="d">
+    <Window.Resources>
+        <ResourceDictionary>
+            <DataTemplate x:Key="SearchPersonTemplate">
+                <StackPanel Orientation="Horizontal">
+                    <ui:SymbolIcon VerticalAlignment="Center" Symbol="Person20" />
+                    <TextBlock
+                        Margin="10,0,0,0"
+                        VerticalAlignment="Center"
+                        Text="{Binding FullName, TargetNullValue={x:Null}}" />
+                </StackPanel>
+            </DataTemplate>
+        </ResourceDictionary>
+    </Window.Resources>
+
+    <Grid x:Name="RootLayout" Margin="12">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="42" />
+            <RowDefinition />
+        </Grid.RowDefinitions>
+        <ui:AutoSuggestBox
+            x:Name="SearchBoxUI"
+            Grid.Row="0"
+            ItemTemplate="{StaticResource SearchPersonTemplate}"
+            PlaceholderText="Search co-workers"
+            Text="{Binding FilterText, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged, TargetNullValue={x:Null}}"
+            TextChanged="SearchBoxUI_TextChanged" />
+        <DataGrid
+            x:Name="PersonsDataGridUI"
+            Grid.Row="1"
+            Margin="0,10,0,0"
+            ItemTemplate="{StaticResource SearchPersonTemplate}"
+            ItemsSource="{Binding FindItems}" />
+    </Grid>
+</Window>
