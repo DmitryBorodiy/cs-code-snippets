@@ -9,28 +9,33 @@ using System.Windows.Controls;
 using System.Reflection.Emit;
 using System.Windows.Input;
 using Wpf.Ui.Input;
+using Wpf.Ui.Controls;
+using CommunityToolkit.Mvvm.Input;
 
 namespace MvvmSample.WPF.ViewModel
 {
-    class PersonViewModel : DependencyObject, INotifyPropertyChanged
+    class PersonViewModel : DependencyObject, INotifyPropertyChanged, IViewModel
     {
         /// <summary>
         /// Inits ViewModel with persons collection for search.
         /// </summary>
         public PersonViewModel() 
         {
+            WindowTitle = "Co-workers";
+
             DBContext = new DB();
             Items = CollectionViewSource.GetDefaultView
             (
                 DBContext.GetPersons()
             );
-
-            MyCommand = new RelayCommand();
         }
 
         private DB DBContext { get; set; }
         public event PropertyChangedEventHandler? PropertyChanged;
-        public ICommand MyCommand { get; private set; }
+
+        #region Properties
+
+        public string WindowTitle { get; set; }
 
         #region FilterTextProp
         /// <summary>
@@ -72,6 +77,8 @@ namespace MvvmSample.WPF.ViewModel
 
         private static readonly DependencyProperty FindItemsProperty =
             DependencyProperty.Register("FindItems", typeof(ICollectionView), typeof(PersonViewModel), new PropertyMetadata(null));
+        #endregion
+
         #endregion
 
         private void NotifyPropertyChanged(string propertyName)
@@ -117,6 +124,7 @@ namespace MvvmSample.WPF.ViewModel
                 );
             }
         }
+
         #endregion
     }
 }

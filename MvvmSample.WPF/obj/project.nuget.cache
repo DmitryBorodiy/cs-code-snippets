@@ -1,9 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "l9CN2iKnCtncVzIAvqt6hTI0qyUtrBwO6Xgx00+EXPD33Ftuct16b2hyv28NMBX1jjtZHwhumXO8vz7bZjbt1w==",
+  "dgSpecHash": "Fc8OpkLgp7NBX32v/wA+rKb5LwfZlqmf5R88JWrs8wqKi8ZZYl/Gc3C1BHnEbghPFCvZgY50Q0e4CJWhiSPnPQ==",
   "success": true,
-  "projectFilePath": "C:\\Users\\dimab\\OneDrive\\Documents\\GitHub\\cs-code-snippets\\MvvmSample.WPF\\MvvmSample.WPF.csproj",
+  "projectFilePath": "C:\\Users\\dimab\\Source\\Repos\\DmitryBorodiy\\cs-code-snippets\\MvvmSample.WPF\\MvvmSample.WPF.csproj",
   "expectedPackageFiles": [
+    "C:\\Users\\dimab\\.nuget\\packages\\communitytoolkit.mvvm\\8.2.2\\communitytoolkit.mvvm.8.2.2.nupkg.sha512",
     "C:\\Users\\dimab\\.nuget\\packages\\dynamitey\\3.0.3\\dynamitey.3.0.3.nupkg.sha512",
     "C:\\Users\\dimab\\.nuget\\packages\\impromptuinterface\\8.0.4\\impromptuinterface.8.0.4.nupkg.sha512",
     "C:\\Users\\dimab\\.nuget\\packages\\microsoft.csharp\\4.7.0\\microsoft.csharp.4.7.0.nupkg.sha512",

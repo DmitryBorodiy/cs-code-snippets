@@ -1,7 +1,5 @@
-﻿using MvvmSample.WPF.Data;
-using MvvmSample.WPF.Model;
+﻿using MvvmSample.WPF.Model;
 using MvvmSample.WPF.ViewModel;
-using System.Diagnostics;
 using System.Windows;
 using Wpf.Ui.Controls;
 
@@ -12,47 +10,26 @@ public partial class MainWindow : Window
     public MainWindow()
     {
         InitializeComponent();
-
-        this.Loaded += MainWindow_Loaded;
-
-        DBContext = new DB();
-        SearchBoxUI.OriginalItemsSource = DBContext.GetPersons();
     }
 
-    private DB DBContext { get; set; }
-    private void WindowInit()
+    public IViewModel ViewModelContext
     {
-        try
-        {
-            //WindowBackgroundManager.UpdateBackground
-            //(
-            //    this,
-            //    ApplicationTheme.Dark,
-            //    WindowBackdropType.Mica,
-            //    false
-            //);
-
-            this.Title = "MVVM Sample";
-        }
-        catch(Exception ex)
-        {
-            Debug.WriteLine(ex.Message + ex.Source, this.GetType().Name);
-        }
-    }
-
-    private void ViewInit() => this.DataContext = new PersonViewModel();
-
-    private void MainWindow_Loaded(object sender, RoutedEventArgs e)
-    {
-        WindowInit();
-        ViewInit();
+        get { return (IViewModel)this.DataContext; }
+        set { this.DataContext = value; }
     }
 
     private void SearchBoxUI_TextChanged(AutoSuggestBox sender, AutoSuggestBoxTextChangedEventArgs args)
     {
-        PersonViewModel vm = (PersonViewModel)this.DataContext;
-        vm.Search(sender.Text);
+        PersonViewModel viewModel = (PersonViewModel)ViewModelContext;
 
-        sender.OriginalItemsSource = vm.FindItems.SourceCollection.Cast<Person>().ToList();
+        if(!String.IsNullOrEmpty(sender.Text) && 
+           viewModel.Items != null &&
+           viewModel.FindItems != null)
+        {
+            viewModel.Search(sender.Text);
+            sender.OriginalItemsSource = viewModel.FindItems.SourceCollection
+                  .Cast<Person>()
+                  .ToArray();
+        }
     }
 }

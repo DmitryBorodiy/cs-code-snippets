@@ -9,6 +9,7 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="CommunityToolkit.Mvvm" Version="8.2.2" />
     <PackageReference Include="ImpromptuInterface" Version="8.0.4" />
     <PackageReference Include="WPF-UI" Version="3.0.3" />
   </ItemGroup>
